@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_5e06dd9617b5d49a12d154af27c4d7f4 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_5e06dd9617b5d49a12d154af27c4d7f4" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_5e06dd9617b5d49a12d154af27c4d7f4 = L.map(
+                "map_5e06dd9617b5d49a12d154af27c4d7f4",
+                {
+                    center: [-15.793889, -47.882778],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 12,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_934233bba72055a4a142a3be50a607fd = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_934233bba72055a4a142a3be50a607fd.addTo(map_5e06dd9617b5d49a12d154af27c4d7f4);
+        
+    
+            var marker_960126a6cdd2c0ed412a56e785e84964 = L.marker(
+                [-15.794, -47.882],
+                {
+}
+            ).addTo(map_5e06dd9617b5d49a12d154af27c4d7f4);
+        
+    
+            var icon_79db8c8fdecb1b762cdbd5805122ebee = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "recycle",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d5d1665acf9195a871dac13fad974da5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cb2c751846c90a5bdeb96354e6d24503 = $(`<div id="html_cb2c751846c90a5bdeb96354e6d24503" style="width: 100.0%; height: 100.0%;">Ponto de Coleta - Asa Sul</div>`)[0];
+                popup_d5d1665acf9195a871dac13fad974da5.setContent(html_cb2c751846c90a5bdeb96354e6d24503);
+            
+        
+
+        marker_960126a6cdd2c0ed412a56e785e84964.bindPopup(popup_d5d1665acf9195a871dac13fad974da5)
+        ;
+
+        
+    
+    
+                marker_960126a6cdd2c0ed412a56e785e84964.setIcon(icon_79db8c8fdecb1b762cdbd5805122ebee);
+            
+    
+            var marker_1471fbf95a5626ce7c9e8a67ae067790 = L.marker(
+                [-15.75, -47.88],
+                {
+}
+            ).addTo(map_5e06dd9617b5d49a12d154af27c4d7f4);
+        
+    
+            var icon_850a018c96bd8adce91cdc442b1c3dcd = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "recycle",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c898c61af5d009f7019cdb70cd8d53c4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0bf32b8a008e3e2a3b786d295283613e = $(`<div id="html_0bf32b8a008e3e2a3b786d295283613e" style="width: 100.0%; height: 100.0%;">Ponto de Coleta - Asa Norte</div>`)[0];
+                popup_c898c61af5d009f7019cdb70cd8d53c4.setContent(html_0bf32b8a008e3e2a3b786d295283613e);
+            
+        
+
+        marker_1471fbf95a5626ce7c9e8a67ae067790.bindPopup(popup_c898c61af5d009f7019cdb70cd8d53c4)
+        ;
+
+        
+    
+    
+                marker_1471fbf95a5626ce7c9e8a67ae067790.setIcon(icon_850a018c96bd8adce91cdc442b1c3dcd);
+            
+    
+            var marker_2acd905456ba8f2d3f1b9d58126ce5b8 = L.marker(
+                [-15.835, -48.056],
+                {
+}
+            ).addTo(map_5e06dd9617b5d49a12d154af27c4d7f4);
+        
+    
+            var icon_f39472068d31f0d38b6e9c4de06971bc = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "recycle",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_60ae11beef66e2920a221ce7434b033c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_07ae3ea1439379384d58c1d878d2c417 = $(`<div id="html_07ae3ea1439379384d58c1d878d2c417" style="width: 100.0%; height: 100.0%;">Ponto de Coleta - Taguatinga</div>`)[0];
+                popup_60ae11beef66e2920a221ce7434b033c.setContent(html_07ae3ea1439379384d58c1d878d2c417);
+            
+        
+
+        marker_2acd905456ba8f2d3f1b9d58126ce5b8.bindPopup(popup_60ae11beef66e2920a221ce7434b033c)
+        ;
+
+        
+    
+    
+                marker_2acd905456ba8f2d3f1b9d58126ce5b8.setIcon(icon_f39472068d31f0d38b6e9c4de06971bc);
+            
+    
+            var marker_5bae49cec2b8ce0e37bfa457a92b5059 = L.marker(
+                [-15.817, -48.112],
+                {
+}
+            ).addTo(map_5e06dd9617b5d49a12d154af27c4d7f4);
+        
+    
+            var icon_80077b9b0f69e3536978443e446d7a87 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "recycle",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_418eeeea7cc54dc3bc5293a0c1930cf1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9d4398ee22049bd45a64a92c28504064 = $(`<div id="html_9d4398ee22049bd45a64a92c28504064" style="width: 100.0%; height: 100.0%;">Ponto de Coleta - Ceilândia</div>`)[0];
+                popup_418eeeea7cc54dc3bc5293a0c1930cf1.setContent(html_9d4398ee22049bd45a64a92c28504064);
+            
+        
+
+        marker_5bae49cec2b8ce0e37bfa457a92b5059.bindPopup(popup_418eeeea7cc54dc3bc5293a0c1930cf1)
+        ;
+
+        
+    
+    
+                marker_5bae49cec2b8ce0e37bfa457a92b5059.setIcon(icon_80077b9b0f69e3536978443e446d7a87);
+            
+</script>
+</html>
