@@ -17,7 +17,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_6a95212995cb908ef947717a643cda3c {
+                #map_afb4848c5b11a243adfb9af1b5d263df {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -50,18 +50,36 @@
             </script>
 
         
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-locatecontrol/0.66.2/L.Control.Locate.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-locatecontrol/0.66.2/L.Control.Locate.min.css"/>
 </head>
 <body>
     
     
-            <div class="folium-map" id="map_6a95212995cb908ef947717a643cda3c" ></div>
+            <div class="folium-map" id="map_afb4848c5b11a243adfb9af1b5d263df" ></div>
         
+    
+
+<div style="
+    position: fixed; 
+    bottom: 20px; left: 20px; width: 230px; 
+    background-color: white; 
+    border:2px solid #2E7D32; 
+    border-radius:8px;
+    padding: 10px;
+    font-size:14px;
+    z-index:9999;
+">
+<b>Legenda:</b><br>
+<span style="color:green; font-size:20px;">●</span> Ponto de Coleta de Lixo Eletrônico
+</div>
+
 </body>
 <script>
     
     
-            var map_6a95212995cb908ef947717a643cda3c = L.map(
-                "map_6a95212995cb908ef947717a643cda3c",
+            var map_afb4848c5b11a243adfb9af1b5d263df = L.map(
+                "map_afb4848c5b11a243adfb9af1b5d263df",
                 {
                     center: [-15.793889, -47.882778],
                     crs: L.CRS.EPSG3857,
@@ -78,7 +96,7 @@
 
         
     
-            var tile_layer_8ec35768e0f80784401eed455fbeb4e9 = L.tileLayer(
+            var tile_layer_9907e5b601b0f9adb2a577c3f427ba4e = L.tileLayer(
                 "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
                 {
   "minZoom": 0,
@@ -95,197 +113,334 @@
             );
         
     
-            tile_layer_8ec35768e0f80784401eed455fbeb4e9.addTo(map_6a95212995cb908ef947717a643cda3c);
+            tile_layer_9907e5b601b0f9adb2a577c3f427ba4e.addTo(map_afb4848c5b11a243adfb9af1b5d263df);
         
     
-            var marker_02dcfef010c7cef628a161bfa7a4e38a = L.marker(
+            var tile_layer_b0ced777f30f8b8b7ce1842dac9ec978 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_b0ced777f30f8b8b7ce1842dac9ec978.addTo(map_afb4848c5b11a243adfb9af1b5d263df);
+        
+    
+            var tile_layer_a2b7a3fae6688b327b9600b3384e262c = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "Map tiles by CartoDB",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_a2b7a3fae6688b327b9600b3384e262c.addTo(map_afb4848c5b11a243adfb9af1b5d263df);
+        
+    
+            var tile_layer_91f065877be006f1dabe93f56ebaf537 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "Map tiles by CartoDB",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_91f065877be006f1dabe93f56ebaf537.addTo(map_afb4848c5b11a243adfb9af1b5d263df);
+        
+    
+            var layer_control_d98dafda523664771b374368e49d2e54_layers = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_b0ced777f30f8b8b7ce1842dac9ec978,
+                    "cartodbpositron" : tile_layer_a2b7a3fae6688b327b9600b3384e262c,
+                    "cartodbdarkmatter" : tile_layer_91f065877be006f1dabe93f56ebaf537,
+                },
+                overlays :  {
+                },
+            };
+            let layer_control_d98dafda523664771b374368e49d2e54 = L.control.layers(
+                layer_control_d98dafda523664771b374368e49d2e54_layers.base_layers,
+                layer_control_d98dafda523664771b374368e49d2e54_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": true,
+  "autoZIndex": true,
+}
+            ).addTo(map_afb4848c5b11a243adfb9af1b5d263df);
+
+        
+    
+            var locate_control_aec600e3dce59eba47d302531e41d864 = L.control.locate(
+                {}
+            ).addTo(map_afb4848c5b11a243adfb9af1b5d263df);
+            
+        
+    
+            var marker_5649911cf32ab59fe82d49d6852e6877 = L.marker(
                 [-15.8009, -47.9134],
                 {
 }
-            ).addTo(map_6a95212995cb908ef947717a643cda3c);
+            ).addTo(map_afb4848c5b11a243adfb9af1b5d263df);
         
     
-            var icon_67ccc968828a8864f35c93b56e548de2 = L.AwesomeMarkers.icon(
+            var icon_b194efe08a34bcd4c181b6b0070b3c1d = L.AwesomeMarkers.icon(
                 {
   "markerColor": "green",
   "iconColor": "white",
-  "icon": "recycle",
-  "prefix": "fa",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
   "extraClasses": "fa-rotate-0",
 }
             );
         
     
-        var popup_0094a46261d8125f9ec926950216c2fd = L.popup({
-  "maxWidth": "100%",
+        var popup_1a01709ce75b34b999d6b71d04f92643 = L.popup({
+  "maxWidth": 260,
 });
 
         
             
-                var html_a91cee6885f9f93a8595611d3f049eda = $(`<div id="html_a91cee6885f9f93a8595611d3f049eda" style="width: 100.0%; height: 100.0%;"><b>SLU - Asa Sul</b><br>SIG Quadra 1</div>`)[0];
-                popup_0094a46261d8125f9ec926950216c2fd.setContent(html_a91cee6885f9f93a8595611d3f049eda);
+                var i_frame_aa4ed91acb0da4c758d4894d8f2ddf62 = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICAKICAgIDxkaXYgc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbCwgc2Fucy1zZXJpZjsgd2lkdGg6IDIzMHB4OyI+CiAgICAgIDxkaXYgc3R5bGU9ImJhY2tncm91bmQ6IzJFN0QzMjsgY29sb3I6d2hpdGU7IHBhZGRpbmc6OHB4IDEwcHg7IGJvcmRlci1yYWRpdXM6NnB4IDZweCAwIDA7Ij4KICAgICAgICA8c3Ryb25nIHN0eWxlPSJmb250LXNpemU6MTVweDsiPlNMVSAtIEFzYSBTdWw8L3N0cm9uZz4KICAgICAgPC9kaXY+CiAgICAgIDxkaXYgc3R5bGU9ImJvcmRlcjoxcHggc29saWQgI2RkZDsgYm9yZGVyLXRvcDpub25lOyBwYWRkaW5nOjEwcHg7IGJhY2tncm91bmQ6I2ZmZjsgYm9yZGVyLXJhZGl1czowIDAgNnB4IDZweDsiPgogICAgICAgIDxkaXYgc3R5bGU9Im1hcmdpbi1ib3R0b206NnB4OyI+PHNwYW4gc3R5bGU9J2ZvbnQtd2VpZ2h0OjYwMDsnPkVuZGVyZcOnbzo8L3NwYW4+PGJyPlNJRyBRdWFkcmEgMTwvZGl2PgogICAgICAgIDxkaXYgc3R5bGU9ImZvbnQtc2l6ZToxMnB4OyBjb2xvcjojNTU1OyI+Q2xpcXVlIGZvcmEgZG8gcG9wdXAgcGFyYSBmZWNoYXI8L2Rpdj4KICAgICAgPC9kaXY+CiAgICA8L2Rpdj4KICAgIA==" width="260" style="border:none !important;" height="140"></iframe>`)[0];
+                popup_1a01709ce75b34b999d6b71d04f92643.setContent(i_frame_aa4ed91acb0da4c758d4894d8f2ddf62);
             
         
 
-        marker_02dcfef010c7cef628a161bfa7a4e38a.bindPopup(popup_0094a46261d8125f9ec926950216c2fd)
+        marker_5649911cf32ab59fe82d49d6852e6877.bindPopup(popup_1a01709ce75b34b999d6b71d04f92643)
         ;
 
         
     
     
-                marker_02dcfef010c7cef628a161bfa7a4e38a.setIcon(icon_67ccc968828a8864f35c93b56e548de2);
+            marker_5649911cf32ab59fe82d49d6852e6877.bindTooltip(
+                `<div>
+                     SLU - Asa Sul
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5649911cf32ab59fe82d49d6852e6877.setIcon(icon_b194efe08a34bcd4c181b6b0070b3c1d);
             
     
-            var marker_effc9a14ba6c1e9abf6ee949098d03ad = L.marker(
+            var marker_fef677fb20e9e5b771c89c2536af8766 = L.marker(
                 [-15.7354, -47.9002],
                 {
 }
-            ).addTo(map_6a95212995cb908ef947717a643cda3c);
+            ).addTo(map_afb4848c5b11a243adfb9af1b5d263df);
         
     
-            var icon_46d6a7430234647ff8363e4564bff7b5 = L.AwesomeMarkers.icon(
+            var icon_09f0d92e52a35445bcd40b7ec5e3bb69 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "green",
   "iconColor": "white",
-  "icon": "recycle",
-  "prefix": "fa",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
   "extraClasses": "fa-rotate-0",
 }
             );
         
     
-        var popup_bbc47b508ed51dcbcba7e2d69a12ec0c = L.popup({
-  "maxWidth": "100%",
+        var popup_82683fadb8b9e7e92478ae8c14181046 = L.popup({
+  "maxWidth": 260,
 });
 
         
             
-                var html_89de3dc6fbd45dd0eab41d8ac864c554 = $(`<div id="html_89de3dc6fbd45dd0eab41d8ac864c554" style="width: 100.0%; height: 100.0%;"><b>SLU - Asa Norte</b><br>SAIN Projeção A</div>`)[0];
-                popup_bbc47b508ed51dcbcba7e2d69a12ec0c.setContent(html_89de3dc6fbd45dd0eab41d8ac864c554);
+                var i_frame_6b913ee222fe6857113a3a8916bbc05c = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICAKICAgIDxkaXYgc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbCwgc2Fucy1zZXJpZjsgd2lkdGg6IDIzMHB4OyI+CiAgICAgIDxkaXYgc3R5bGU9ImJhY2tncm91bmQ6IzJFN0QzMjsgY29sb3I6d2hpdGU7IHBhZGRpbmc6OHB4IDEwcHg7IGJvcmRlci1yYWRpdXM6NnB4IDZweCAwIDA7Ij4KICAgICAgICA8c3Ryb25nIHN0eWxlPSJmb250LXNpemU6MTVweDsiPlNMVSAtIEFzYSBOb3J0ZTwvc3Ryb25nPgogICAgICA8L2Rpdj4KICAgICAgPGRpdiBzdHlsZT0iYm9yZGVyOjFweCBzb2xpZCAjZGRkOyBib3JkZXItdG9wOm5vbmU7IHBhZGRpbmc6MTBweDsgYmFja2dyb3VuZDojZmZmOyBib3JkZXItcmFkaXVzOjAgMCA2cHggNnB4OyI+CiAgICAgICAgPGRpdiBzdHlsZT0ibWFyZ2luLWJvdHRvbTo2cHg7Ij48c3BhbiBzdHlsZT0nZm9udC13ZWlnaHQ6NjAwOyc+RW5kZXJlw6dvOjwvc3Bhbj48YnI+U0FJTiBQcm9qZcOnw6NvIEE8L2Rpdj4KICAgICAgICA8ZGl2IHN0eWxlPSJmb250LXNpemU6MTJweDsgY29sb3I6IzU1NTsiPkNsaXF1ZSBmb3JhIGRvIHBvcHVwIHBhcmEgZmVjaGFyPC9kaXY+CiAgICAgIDwvZGl2PgogICAgPC9kaXY+CiAgICA=" width="260" style="border:none !important;" height="140"></iframe>`)[0];
+                popup_82683fadb8b9e7e92478ae8c14181046.setContent(i_frame_6b913ee222fe6857113a3a8916bbc05c);
             
         
 
-        marker_effc9a14ba6c1e9abf6ee949098d03ad.bindPopup(popup_bbc47b508ed51dcbcba7e2d69a12ec0c)
+        marker_fef677fb20e9e5b771c89c2536af8766.bindPopup(popup_82683fadb8b9e7e92478ae8c14181046)
         ;
 
         
     
     
-                marker_effc9a14ba6c1e9abf6ee949098d03ad.setIcon(icon_46d6a7430234647ff8363e4564bff7b5);
+            marker_fef677fb20e9e5b771c89c2536af8766.bindTooltip(
+                `<div>
+                     SLU - Asa Norte
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_fef677fb20e9e5b771c89c2536af8766.setIcon(icon_09f0d92e52a35445bcd40b7ec5e3bb69);
             
     
-            var marker_74ff448f8528cb002383f9867109fd96 = L.marker(
+            var marker_016ab50751b10ba7f0eb96bd1b160519 = L.marker(
                 [-15.8298, -47.983],
                 {
 }
-            ).addTo(map_6a95212995cb908ef947717a643cda3c);
+            ).addTo(map_afb4848c5b11a243adfb9af1b5d263df);
         
     
-            var icon_c4361a0531aec9b023fd0ebd8e2056b8 = L.AwesomeMarkers.icon(
+            var icon_9e7bad38524bcc1bde29c0577e2721ef = L.AwesomeMarkers.icon(
                 {
   "markerColor": "green",
   "iconColor": "white",
-  "icon": "recycle",
-  "prefix": "fa",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
   "extraClasses": "fa-rotate-0",
 }
             );
         
     
-        var popup_4bc9c023b127a69f497111498d95ba67 = L.popup({
-  "maxWidth": "100%",
+        var popup_f7fdd984de2ba52a091fca50fcb48b12 = L.popup({
+  "maxWidth": 260,
 });
 
         
             
-                var html_dc1311621e3278a0bfccfce8fea13f2d = $(`<div id="html_dc1311621e3278a0bfccfce8fea13f2d" style="width: 100.0%; height: 100.0%;"><b>Ecoponto Guará II</b><br>QE 38 Guará II</div>`)[0];
-                popup_4bc9c023b127a69f497111498d95ba67.setContent(html_dc1311621e3278a0bfccfce8fea13f2d);
+                var i_frame_6130561fd92e4c198f0f62114ebd21d4 = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICAKICAgIDxkaXYgc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbCwgc2Fucy1zZXJpZjsgd2lkdGg6IDIzMHB4OyI+CiAgICAgIDxkaXYgc3R5bGU9ImJhY2tncm91bmQ6IzJFN0QzMjsgY29sb3I6d2hpdGU7IHBhZGRpbmc6OHB4IDEwcHg7IGJvcmRlci1yYWRpdXM6NnB4IDZweCAwIDA7Ij4KICAgICAgICA8c3Ryb25nIHN0eWxlPSJmb250LXNpemU6MTVweDsiPkVjb3BvbnRvIEd1YXLDoSBJSTwvc3Ryb25nPgogICAgICA8L2Rpdj4KICAgICAgPGRpdiBzdHlsZT0iYm9yZGVyOjFweCBzb2xpZCAjZGRkOyBib3JkZXItdG9wOm5vbmU7IHBhZGRpbmc6MTBweDsgYmFja2dyb3VuZDojZmZmOyBib3JkZXItcmFkaXVzOjAgMCA2cHggNnB4OyI+CiAgICAgICAgPGRpdiBzdHlsZT0ibWFyZ2luLWJvdHRvbTo2cHg7Ij48c3BhbiBzdHlsZT0nZm9udC13ZWlnaHQ6NjAwOyc+RW5kZXJlw6dvOjwvc3Bhbj48YnI+UUUgMzggR3VhcsOhIElJPC9kaXY+CiAgICAgICAgPGRpdiBzdHlsZT0iZm9udC1zaXplOjEycHg7IGNvbG9yOiM1NTU7Ij5DbGlxdWUgZm9yYSBkbyBwb3B1cCBwYXJhIGZlY2hhcjwvZGl2PgogICAgICA8L2Rpdj4KICAgIDwvZGl2PgogICAg" width="260" style="border:none !important;" height="140"></iframe>`)[0];
+                popup_f7fdd984de2ba52a091fca50fcb48b12.setContent(i_frame_6130561fd92e4c198f0f62114ebd21d4);
             
         
 
-        marker_74ff448f8528cb002383f9867109fd96.bindPopup(popup_4bc9c023b127a69f497111498d95ba67)
+        marker_016ab50751b10ba7f0eb96bd1b160519.bindPopup(popup_f7fdd984de2ba52a091fca50fcb48b12)
         ;
 
         
     
     
-                marker_74ff448f8528cb002383f9867109fd96.setIcon(icon_c4361a0531aec9b023fd0ebd8e2056b8);
+            marker_016ab50751b10ba7f0eb96bd1b160519.bindTooltip(
+                `<div>
+                     Ecoponto Guará II
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_016ab50751b10ba7f0eb96bd1b160519.setIcon(icon_9e7bad38524bcc1bde29c0577e2721ef);
             
     
-            var marker_994c8c465fc7ad57849f70ef9ea57092 = L.marker(
+            var marker_498c88160f0d370be7ca6e2b5f59f6c4 = L.marker(
                 [-15.8702, -48.0797],
                 {
 }
-            ).addTo(map_6a95212995cb908ef947717a643cda3c);
+            ).addTo(map_afb4848c5b11a243adfb9af1b5d263df);
         
     
-            var icon_2d40e2ebf870ffe2b2e6cb82dcbe3123 = L.AwesomeMarkers.icon(
+            var icon_074f36a15a15f6ffff06fdd234429eda = L.AwesomeMarkers.icon(
                 {
   "markerColor": "green",
   "iconColor": "white",
-  "icon": "recycle",
-  "prefix": "fa",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
   "extraClasses": "fa-rotate-0",
 }
             );
         
     
-        var popup_dd923c811812283d6ff054d2f608ea5c = L.popup({
-  "maxWidth": "100%",
+        var popup_f00a5a524ba8231c6ebafbd413d1323b = L.popup({
+  "maxWidth": 260,
 });
 
         
             
-                var html_b26df47449a04177925158e19471a7dd = $(`<div id="html_b26df47449a04177925158e19471a7dd" style="width: 100.0%; height: 100.0%;"><b>Ecoponto Samambaia</b><br>QN 315 Samambaia Sul</div>`)[0];
-                popup_dd923c811812283d6ff054d2f608ea5c.setContent(html_b26df47449a04177925158e19471a7dd);
+                var i_frame_98e90b7781edaf52ad4cb0c93f3d98c8 = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICAKICAgIDxkaXYgc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbCwgc2Fucy1zZXJpZjsgd2lkdGg6IDIzMHB4OyI+CiAgICAgIDxkaXYgc3R5bGU9ImJhY2tncm91bmQ6IzJFN0QzMjsgY29sb3I6d2hpdGU7IHBhZGRpbmc6OHB4IDEwcHg7IGJvcmRlci1yYWRpdXM6NnB4IDZweCAwIDA7Ij4KICAgICAgICA8c3Ryb25nIHN0eWxlPSJmb250LXNpemU6MTVweDsiPkVjb3BvbnRvIFNhbWFtYmFpYTwvc3Ryb25nPgogICAgICA8L2Rpdj4KICAgICAgPGRpdiBzdHlsZT0iYm9yZGVyOjFweCBzb2xpZCAjZGRkOyBib3JkZXItdG9wOm5vbmU7IHBhZGRpbmc6MTBweDsgYmFja2dyb3VuZDojZmZmOyBib3JkZXItcmFkaXVzOjAgMCA2cHggNnB4OyI+CiAgICAgICAgPGRpdiBzdHlsZT0ibWFyZ2luLWJvdHRvbTo2cHg7Ij48c3BhbiBzdHlsZT0nZm9udC13ZWlnaHQ6NjAwOyc+RW5kZXJlw6dvOjwvc3Bhbj48YnI+UU4gMzE1IFNhbWFtYmFpYSBTdWw8L2Rpdj4KICAgICAgICA8ZGl2IHN0eWxlPSJmb250LXNpemU6MTJweDsgY29sb3I6IzU1NTsiPkNsaXF1ZSBmb3JhIGRvIHBvcHVwIHBhcmEgZmVjaGFyPC9kaXY+CiAgICAgIDwvZGl2PgogICAgPC9kaXY+CiAgICA=" width="260" style="border:none !important;" height="140"></iframe>`)[0];
+                popup_f00a5a524ba8231c6ebafbd413d1323b.setContent(i_frame_98e90b7781edaf52ad4cb0c93f3d98c8);
             
         
 
-        marker_994c8c465fc7ad57849f70ef9ea57092.bindPopup(popup_dd923c811812283d6ff054d2f608ea5c)
+        marker_498c88160f0d370be7ca6e2b5f59f6c4.bindPopup(popup_f00a5a524ba8231c6ebafbd413d1323b)
         ;
 
         
     
     
-                marker_994c8c465fc7ad57849f70ef9ea57092.setIcon(icon_2d40e2ebf870ffe2b2e6cb82dcbe3123);
+            marker_498c88160f0d370be7ca6e2b5f59f6c4.bindTooltip(
+                `<div>
+                     Ecoponto Samambaia
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_498c88160f0d370be7ca6e2b5f59f6c4.setIcon(icon_074f36a15a15f6ffff06fdd234429eda);
             
     
-            var marker_eff51e5120cb4344bf72497acb0ebdac = L.marker(
+            var marker_49fe8138471f83e7803479c0a94679d7 = L.marker(
                 [-15.8224, -48.1093],
                 {
 }
-            ).addTo(map_6a95212995cb908ef947717a643cda3c);
+            ).addTo(map_afb4848c5b11a243adfb9af1b5d263df);
         
     
-            var icon_06f1113f32d77eba48e9367c647c29e8 = L.AwesomeMarkers.icon(
+            var icon_a9636a1facd6a6149ba44311fcc267ed = L.AwesomeMarkers.icon(
                 {
   "markerColor": "green",
   "iconColor": "white",
-  "icon": "recycle",
-  "prefix": "fa",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
   "extraClasses": "fa-rotate-0",
 }
             );
         
     
-        var popup_8b048b07a893f0e7a669eab4773bc15e = L.popup({
-  "maxWidth": "100%",
+        var popup_6c4eca784aaaf5548cd386da789db107 = L.popup({
+  "maxWidth": 260,
 });
 
         
             
-                var html_83547005e8d0bfb076c1d7fdf633ca8b = $(`<div id="html_83547005e8d0bfb076c1d7fdf633ca8b" style="width: 100.0%; height: 100.0%;"><b>Ecoponto Ceilândia</b><br>QNM 28 Ceilândia</div>`)[0];
-                popup_8b048b07a893f0e7a669eab4773bc15e.setContent(html_83547005e8d0bfb076c1d7fdf633ca8b);
+                var i_frame_94245cbc91967fc8587202706f34cdfa = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICAKICAgIDxkaXYgc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbCwgc2Fucy1zZXJpZjsgd2lkdGg6IDIzMHB4OyI+CiAgICAgIDxkaXYgc3R5bGU9ImJhY2tncm91bmQ6IzJFN0QzMjsgY29sb3I6d2hpdGU7IHBhZGRpbmc6OHB4IDEwcHg7IGJvcmRlci1yYWRpdXM6NnB4IDZweCAwIDA7Ij4KICAgICAgICA8c3Ryb25nIHN0eWxlPSJmb250LXNpemU6MTVweDsiPkVjb3BvbnRvIENlaWzDom5kaWE8L3N0cm9uZz4KICAgICAgPC9kaXY+CiAgICAgIDxkaXYgc3R5bGU9ImJvcmRlcjoxcHggc29saWQgI2RkZDsgYm9yZGVyLXRvcDpub25lOyBwYWRkaW5nOjEwcHg7IGJhY2tncm91bmQ6I2ZmZjsgYm9yZGVyLXJhZGl1czowIDAgNnB4IDZweDsiPgogICAgICAgIDxkaXYgc3R5bGU9Im1hcmdpbi1ib3R0b206NnB4OyI+PHNwYW4gc3R5bGU9J2ZvbnQtd2VpZ2h0OjYwMDsnPkVuZGVyZcOnbzo8L3NwYW4+PGJyPlFOTSAyOCBDZWlsw6JuZGlhPC9kaXY+CiAgICAgICAgPGRpdiBzdHlsZT0iZm9udC1zaXplOjEycHg7IGNvbG9yOiM1NTU7Ij5DbGlxdWUgZm9yYSBkbyBwb3B1cCBwYXJhIGZlY2hhcjwvZGl2PgogICAgICA8L2Rpdj4KICAgIDwvZGl2PgogICAg" width="260" style="border:none !important;" height="140"></iframe>`)[0];
+                popup_6c4eca784aaaf5548cd386da789db107.setContent(i_frame_94245cbc91967fc8587202706f34cdfa);
             
         
 
-        marker_eff51e5120cb4344bf72497acb0ebdac.bindPopup(popup_8b048b07a893f0e7a669eab4773bc15e)
+        marker_49fe8138471f83e7803479c0a94679d7.bindPopup(popup_6c4eca784aaaf5548cd386da789db107)
         ;
 
         
     
     
-                marker_eff51e5120cb4344bf72497acb0ebdac.setIcon(icon_06f1113f32d77eba48e9367c647c29e8);
+            marker_49fe8138471f83e7803479c0a94679d7.bindTooltip(
+                `<div>
+                     Ecoponto Ceilândia
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_49fe8138471f83e7803479c0a94679d7.setIcon(icon_a9636a1facd6a6149ba44311fcc267ed);
             
 </script>
 </html>
